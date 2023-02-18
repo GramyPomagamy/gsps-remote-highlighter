@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Publiczny highlighter GSPS Dzieciom 2023</title>
+    <link rel="stylesheet" type="text/css" href="/css/styles.css" />
+  </head>
+  <body>
+    <section class="section">
+      <div
+        class="container flex is-flex-direction-column is-align-items-center mt-6"
+      >
+        <img src="/img/gsps_logo.png" width="40%" />
+        <h1 class="title mt-5 mx-4 has-text-centered" style="color: white">
+          Publiczny highlighter GSPS Dzieciom 2023
+        </h1>
+        <button id="doHighlightButton" class="button is-primary is-large mt-4">
+          Zrób highlight
+        </button>
+      </div>
+    </section>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+      var socket = io();
+
+      var button = document.getElementById("doHighlightButton");
+
+      button.onclick = function () {
+        socket.emit("highlight");
+      };
+    </script>
+  </body>
+</html>
