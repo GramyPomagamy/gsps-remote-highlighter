@@ -12,7 +12,6 @@ COPY . .
 RUN npm install
 
 # Build stuff
-COPY tsconfig.json ./
 RUN npm run build
 RUN npm run css-build
 
