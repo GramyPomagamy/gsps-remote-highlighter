@@ -16,6 +16,9 @@
         <h1 class="title mt-5 mx-4 has-text-centered" style="color: white">
           Publiczny highlighter GSPS Dzieciom 2023
         </h1>
+        <h2 id="confirmation" style="color: #32a852; display: none; font-size: 20px;">
+          Wykonano highlight o <span id="timestamp"></span>
+        </h2>
         <button id="doHighlightButton" class="button is-primary is-large mt-4">
           Zrób highlight
         </button>
@@ -29,6 +32,10 @@
 
       button.onclick = function () {
         socket.emit("highlight");
+        document.getElementById("confirmation").style.display = "unset";
+        document.getElementById("timestamp").innerHTML = new Date(
+          Date.now()
+        ).toLocaleTimeString("pl-PL");
       };
     </script>
   </body>
