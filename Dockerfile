@@ -1,19 +1,25 @@
-# Use Node 18
-FROM node:18
+# Node 22 is the current LTS version
+FROM node:22-alpine as build
+WORKDIR /app
 
-# App runs on port 3000
-EXPOSE 3000
-
-WORKDIR /gsps-remote-highlighter
-
-COPY . .
-
-# Install npm deps
+COPY package.json ./
 RUN npm install
 
-# Build stuff
+COPY src/ src/
+COPY tsconfig.json ./
 RUN npm run build
 RUN npm run css-build
 
-# Run server
+
+FROM node:22-alpine as app
+WORKDIR /app
+
+COPY package.json ./
+RUN npm install --omit=dev
+
+COPY views/ views/
+COPY public/ public/
+COPY --from=build /app/app.js ./
+COPY --from=build /app/public/css/styles.css ./public/css/
+
 CMD ["node", "app.js"]
