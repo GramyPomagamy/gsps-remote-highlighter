@@ -1,4 +1,5 @@
 @charset "utf-8";
+@use "bulma/bulma";
 
 // Font
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap");
@@ -18,12 +19,3 @@ html {
     display: flex;
 }
 
-// Some Bulma components
-@import "../../node_modules/bulma/sass/base/_all.sass";
-@import "../../node_modules/bulma/sass/utilities/_all.sass";
-@import "../../node_modules/bulma/sass/helpers/flexbox.sass";
-@import "../../node_modules/bulma/sass/helpers/spacing.sass";
-@import "../../node_modules/bulma/sass/helpers/typography.sass";
-@import "../../node_modules/bulma/sass/elements/button.sass";
-@import "../../node_modules/bulma/sass/elements/container.sass";
-@import "../../node_modules/bulma/sass/elements/title.sass";
