@@ -6,7 +6,7 @@
   "scripts": {
     "build": "tsc",
     "watch": "tsc -w",
-    "css-build": "sass --no-source-map src/sass/styles.scss public/css/styles.css",
+    "css-build": "sass --load-path=node_modules --no-source-map src/sass/styles.scss public/css/styles.css",
     "css-watch": "npm run css-build -- --watch"
   },
   "author": "GramyPomagamy",
@@ -15,15 +15,15 @@
   ],
   "license": "ISC",
   "dependencies": {
-    "express": "^4.18.2",
-    "socket.io": "^4.6.0"
+    "express": "^5.1.0",
+    "socket.io": "^4.8.1"
   },
   "devDependencies": {
-    "@tsconfig/node18": "^1.0.1",
-    "@types/express": "^4.17.17",
-    "@types/node": "^18.14.0",
-    "bulma": "^0.9.4",
-    "sass": "^1.58.3",
-    "typescript": "^4.9.5"
+    "@tsconfig/node22": "^22.0.2",
+    "@types/express": "^5.0.2",
+    "@types/node": "^22.15.29",
+    "bulma": "^1.0.4",
+    "sass": "^1.89.1",
+    "typescript": "^5.8.3"
   }
 }
